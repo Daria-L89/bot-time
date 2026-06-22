@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import Application, MessageHandler, filters, ContextTypes
 import re
 
-TOKEN = "8644378147:AAEpAjVnRmzpsz4AnqKILn6uc3xnAgj2QJA"
+TOKEN = "ВСТАВЬ_СЮДА_ТОКЕН"
 
 def parse_minutes(t):
     h, m = map(int, t.split("-"))
