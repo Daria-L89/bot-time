@@ -43,11 +43,11 @@ async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     message = "📊 Облік часу\n\n"
     
+    # Исправленные отступы внутри цикла for:
     for project, minutes in projects.items():
-    h = minutes // 60
-    m = minutes % 60
-
-    message += f"📁 {project}: {h} год {m} хв\n"
+        h = minutes // 60
+        m = minutes % 60
+        message += f"📁 {project}: {h} год {m} хв\n"
     
     message += "\n──────────────\n"
     
