@@ -1,6 +1,7 @@
+import os
+import re
 from telegram import Update
 from telegram.ext import Application, MessageHandler, filters, ContextTypes
-import re
 
 TOKEN = os.environ["TOKEN"]
 
