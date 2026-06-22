@@ -40,28 +40,22 @@ def calculate(text):
 async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
     projects, total = calculate(text)
-
-message = "📊 Звіт\n\n"
-
-total = 0
-
-for project, minutes in projects.items():
-   message = "📊 Облік часу\n\n"
-
-for project, minutes in projects.items():
+    
+    message = "📊 Облік часу\n\n"
+    
+    for project, minutes in projects.items():
     h = minutes // 60
     m = minutes % 60
 
     message += f"📁 {project}: {h} год {m} хв\n"
-
-message += "\n──────────────\n"
-
-h = total // 60
-m = total % 60
-
-message += f"🕒 Загалом: {h} год {m} хв"
-
-await update.message.reply_text(message)
+    
+    message += "\n──────────────\n"
+    
+    h = total // 60
+    m = total % 60
+    message += f"🕒 Загалом: {h} год {m} хв"
+    
+    await update.message.reply_text(message)
 
 app = Application.builder().token(TOKEN).build()
 app.add_handler(MessageHandler(filters.TEXT, handle))
